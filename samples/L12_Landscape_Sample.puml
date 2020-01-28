@@ -1,0 +1,47 @@
+@startuml
+!includeurl https://raw.githubusercontent.com/rolandnorberg/L12-PlantUML/master/L12_Context.puml
+!includeurl https://raw.githubusercontent.com/rolandnorberg/L12-PlantUML/master/L12_Legend.puml
+' uncomment the following line and comment the first to use locally
+' !include ../L12_Landscape.puml
+' !include ../L12_Legend.puml
+
+LAYOUT_TOP_DOWN
+
+title Target Architecture Example: Show AsIs as well as ToBe Architecture
+
+Person(player, "Player", "A person that plays on the reward box")
+Person(customer, "Bonus manager", "A person that performs bonus handouts")
+
+System_Boundary(b_enjoy, "Enjoy") {
+
+    System(freespinbonus, "FreespinBonus", "TBD")
+
+    System_Deprecate(freespinaccount, "FreespinAccount", "TBD")
+
+    System_Develop(account_app, "account-app", "TBD")
+    System_Develop(wallet_app, "wallet-app", "TBD")
+
+    System(rewardbox, "RewardBox", "TBD")
+
+}
+
+System_Ext(joystick, "Joystick", "Bonus handouts from Joystick")
+
+
+
+
+Rel_D(player, rewardbox, "Uses")
+
+Rel_D(customer, freespinbonus, "Uses")
+Rel_D(joystick, freespinbonus, "Uses")
+
+Rel_R(rewardbox, freespinbonus,  "Uses")
+Rel_D(freespinbonus, freespinaccount, "Uses")
+Rel_D(freespinbonus, account_app, "Uses")
+
+Rel_R(account_app, wallet_app, "Uses")
+
+
+Lay_D(customer, b_enjoy)
+
+@enduml
