@@ -1,0 +1,44 @@
+@startuml
+!includeurl https://raw.githubusercontent.com/rolandnorberg/C4-PlantUML/master/L12_Context.puml
+!includeurl https://raw.githubusercontent.com/rolandnorberg/C4-PlantUML/master/L12_Legend.puml
+' uncomment the following line and comment the first to use locally
+' !include ../L12_Context.puml
+' !include ../L12_Legend.puml
+
+LAYOUT_TOP_DOWN
+
+title Target Architecture Example: Show AsIs as well as ToBe Architecture
+
+Person(customer, "Bonus manager", "A person that performs bonus handouts")
+
+System_Ext(joystick, "Joystick", "Bonus handouts from Joystick")
+
+System(freespinbonus, "FreespinBonus", "TBD")
+
+System_Deprecate(freespinaccount, "FreespinAccount", "TBD")
+
+SystemDb_Deprecate(mysql56_freespin, "freespin")
+
+System_Develop(account_app, "account-app", "TBD")
+System_Develop(wallet_app, "wallet-app", "TBD")
+
+SystemDb_Deprecate(mysql56_freespin, "freespin")
+SystemDb_Develop(mysql8_wallet, "wallet")
+SystemDb_Develop(mysql8_account, "account")
+
+
+Rel_D(customer, freespinbonus, "Uses")
+Rel_D(joystick, freespinbonus, "Uses")
+
+Rel_D(freespinbonus, freespinaccount, "Uses")
+Rel_D(freespinbonus, account_app, "Uses")
+
+Rel_R(account_app, wallet_app, "Uses")
+
+Rel_D(freespinaccount, mysql56_freespin, "JDBC")
+Rel_D(account_app, mysql8_account, "JDBC")
+Rel_D(wallet_app, mysql8_wallet, "JDBC")
+
+Lay_L(account_app, freespinaccount)
+
+@enduml
