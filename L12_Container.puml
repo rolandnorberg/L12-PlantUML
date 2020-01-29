@@ -11,6 +11,8 @@
 ' ##################################
 
 !define CONTAINER_BG_COLOR #438DD5
+!define CONTAINER_DEPRECATE_BG_COLOR #TAN
+!define CONTAINER_DEVELOP_BG_COLOR #MEDIUMSEAGREEN
 
 ' Styling
 ' ##################################
@@ -22,10 +24,38 @@ skinparam rectangle<<container>> {
     BorderColor #3C7FC0
 }
 
+skinparam rectangle<<container_deprecate>> {
+    StereotypeFontColor ELEMENT_FONT_COLOR
+    FontColor ELEMENT_FONT_COLOR
+    BackgroundColor CONTAINER_DEPRECATE_BG_COLOR
+    BorderColor #3C7FC0
+}
+
+skinparam rectangle<<container_develop>> {
+    StereotypeFontColor ELEMENT_FONT_COLOR
+    FontColor ELEMENT_FONT_COLOR
+    BackgroundColor CONTAINER_DEVELOP_BG_COLOR
+    BorderColor #3C7FC0
+}
+
 skinparam database<<container>> {
     StereotypeFontColor ELEMENT_FONT_COLOR
     FontColor ELEMENT_FONT_COLOR
     BackgroundColor CONTAINER_BG_COLOR
+    BorderColor #3C7FC0
+}
+
+skinparam database<<container_deprecate>> {
+    StereotypeFontColor ELEMENT_FONT_COLOR
+    FontColor ELEMENT_FONT_COLOR
+    BackgroundColor CONTAINER_DEPRECATE_BG_COLOR
+    BorderColor #3C7FC0
+}
+
+skinparam database<<container_develop>> {
+    StereotypeFontColor ELEMENT_FONT_COLOR
+    FontColor ELEMENT_FONT_COLOR
+    BackgroundColor CONTAINER_DEVELOP_BG_COLOR
     BorderColor #3C7FC0
 }
 
@@ -40,8 +70,20 @@ center footer L12 Container Model
 !define Container(e_alias, e_label, e_techn) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<container>> as e_alias
 !define Container(e_alias, e_label, e_techn, e_descr) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//\n\n e_descr" <<container>> as e_alias
 
+!define Container_Deprecate(e_alias, e_label, e_techn) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<container_deprecate>> as e_alias
+!define Container_Deprecate(e_alias, e_label, e_techn, e_descr) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//\n\n e_descr" <<container_deprecate>> as e_alias
+
+!define Container_Develop(e_alias, e_label, e_techn) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<container_develop>> as e_alias
+!define Container_Develop(e_alias, e_label, e_techn, e_descr) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//\n\n e_descr" <<container_develop>> as e_alias
+
 !define ContainerDb(e_alias, e_label, e_techn) database "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<container>> as e_alias
 !define ContainerDb(e_alias, e_label, e_techn, e_descr) database "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//\n\n e_descr" <<container>> as e_alias
+
+!define ContainerDb_Deprecate(e_alias, e_label, e_techn) database "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<container_deprecate>> as e_alias
+!define ContainerDb_Deprecate(e_alias, e_label, e_techn, e_descr) database "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//\n\n e_descr" <<container_deprecate>> as e_alias
+
+!define ContainerDb_Develop(e_alias, e_label, e_techn) database "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<container_develop>> as e_alias
+!define ContainerDb_Develop(e_alias, e_label, e_techn, e_descr) database "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//\n\n e_descr" <<container_develop>> as e_alias
 
 ' Boundaries
 ' ##################################

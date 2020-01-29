@@ -1,0 +1,45 @@
+@startuml
+!includeurl https://raw.githubusercontent.com/rolandnorberg/L12-PlantUML/master/L12_Context.puml
+!includeurl https://raw.githubusercontent.com/rolandnorberg/L12-PlantUML/master/L12_Legend.puml
+' uncomment the following line and comment the first to use locally
+' !include ../L12_Container.puml
+' !include ../L12_Legend.puml
+
+LAYOUT_TOP_DOWN
+
+title Target Architecture Example: Show AsIs as well as ToBe Architecture
+
+System(bonus, "FreespinBonus")
+System(player, "player-app")
+
+SystemDb_Deprecate(db, "freespin")
+
+
+Container_Boundary(b2, "Freespin Account") {
+    Container(c1, "AccountAPI", "")
+    Container_Deprecate(c2, "AccountExclusionAPI", "")
+    Container(c3, "TransactionAPI", "")
+
+    Container(c4, "Accounts", "")
+    Container(c5, "Transactions", "")
+    Container_Deprecate(c6, "CodeLib", "")
+
+}
+
+
+
+Rel_D(bonus, c1, "Uses")
+Rel_D(bonus, c3, "Uses")
+Rel_D(player, c2, "Uses")
+
+Rel_D(c1, c4, "Uses")
+Rel_D(c1, c5, "Uses")
+Rel_D(c2, c4, "Uses")
+Rel_D(c3, c5, "Uses")
+Rel_D(c4, c6, "Uses")
+Rel_D(c5, c6, "Uses")
+
+Rel_D(c6, db, "JDBC")
+
+
+@enduml
