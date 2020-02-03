@@ -1,0 +1,15 @@
+legend bottom left
+L12 Model Legend
+|=              |= Type |
+|<PERSON_BG_COLOR>      | person |
+|<EXTERNAL_PERSON_BG_COLOR>      | external person |
+|<SYSTEM_BG_COLOR>   | system |
+|<SYSTEM_DEPRECATE_BG_COLOR>   | system to be deprecated |
+|<SYSTEM_DEVELOP_BG_COLOR>   | system to be developed|
+|<EXTERNAL_SYSTEM_BG_COLOR>      | external system |
+|<EXTERNAL_SYSTEM_DEPRECATE_BG_COLOR>      | external system to be deprecated |
+|<EXTERNAL_SYSTEM_DEVELOP_BG_COLOR>      | external system to be developed |
+|<CONTAINER_BG_COLOR>   | container |
+|<CONTAINER_DEPRECATE_BG_COLOR>   | container to be deprecated |
+|<CONTAINER_DEVELOP_BG_COLOR>   | container to be developed|
+endlegend
