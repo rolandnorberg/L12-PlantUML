@@ -1,6 +1,6 @@
 @startuml
 !includeurl https://raw.githubusercontent.com/rolandnorberg/L12-PlantUML/master/L12_Container.puml
-!includeurl https://raw.githubusercontent.com/rolandnorberg/L12-PlantUML/master/L12_Legend.puml
+!includeurl https://raw.githubusercontent.com/rolandnorberg/L12-PlantUML/master/L12_Legend_Container.puml
 ' uncomment the following line and comment the first to use locally
 ' !include ../L12_Container.puml
 ' !include ../L12_Legend.puml
