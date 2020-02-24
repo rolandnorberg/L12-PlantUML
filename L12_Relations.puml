@@ -1,0 +1,72 @@
+' L12 Extension, version 1.0.0
+' https://github.com/rolandnorberg/L12-PlantUML
+
+' Relations
+' ##################################
+!define Rel_(e_alias1, e_alias2, e_label, e_direction="") e_alias1 e_direction e_alias2 : "===e_label"
+!define Rel_(e_alias1, e_alias2, e_label, e_techn, e_direction="") e_alias1 e_direction e_alias2 : "===e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//"
+
+!define Rel_Stereotype(e_alias1, e_alias2, e_label, e_stereotype, e_direction="") e_alias1 e_direction e_alias2 : "===e_label\n//<size:TECHN_FONT_SIZE><<e_stereotype>></size>//"
+!define Rel_Stereotype(e_alias1, e_alias2, e_label, e_stereotype, e_techn, e_direction="") e_alias1 e_direction e_alias2 : "===e_label\n//<size:TECHN_FONT_SIZE><<e_stereotype>></size>//\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//"
+
+!define Rel(e_from,e_to, e_label) Rel_(e_from,e_to, e_label, "-->")
+!define Rel(e_from,e_to, e_label, e_techn) Rel_(e_from,e_to, e_label, e_techn, "-->")
+
+!define Rel_Back(e_to, e_from, e_label) Rel_(e_to, e_from, e_label, "<--")
+!define Rel_Back(e_to, e_from, e_label, e_techn) Rel_(e_to, e_from, e_label, e_techn, "<--")
+
+!define Rel_Neighbor(e_from,e_to, e_label) Rel_(e_from,e_to, e_label, "->")
+!define Rel_Neighbor(e_from,e_to, e_label, e_techn) Rel_(e_from,e_to, e_label, e_techn, "->")
+
+!define Rel_Back_Neighbor(e_to, e_from, e_label) Rel_(e_to, e_from, e_label, "<-")
+!define Rel_Back_Neighbor(e_to, e_from, e_label, e_techn) Rel_(e_to, e_from, e_label, e_techn, "<-")
+
+!define Rel_D(e_from,e_to, e_label) Rel_(e_from,e_to, e_label, "-DOWN->")
+!define Rel_D(e_from,e_to, e_label, e_techn) Rel_(e_from,e_to, e_label, e_techn, "-DOWN->")
+!define Rel_Down(e_from,e_to, e_label) Rel_D(e_from,e_to, e_label)
+!define Rel_Down(e_from,e_to, e_label, e_techn) Rel_D(e_from,e_to, e_label, e_techn)
+
+!define Rel_U(e_from,e_to, e_label) Rel_(e_from,e_to, e_label, "-UP->")
+!define Rel_U(e_from,e_to, e_label, e_techn) Rel_(e_from,e_to, e_label, e_techn, "-UP->")
+!define Rel_Up(e_from,e_to, e_label) Rel_U(e_from,e_to, e_label)
+!define Rel_Up(e_from,e_to, e_label, e_techn) Rel_U(e_from,e_to, e_label, e_techn)
+
+!define Rel_L(e_from,e_to, e_label) Rel_(e_from,e_to, e_label, "-LEFT->")
+!define Rel_L(e_from,e_to, e_label, e_techn) Rel_(e_from,e_to, e_label, e_techn, "-LEFT->")
+!define Rel_Left(e_from,e_to, e_label) Rel_L(e_from,e_to, e_label)
+!define Rel_Left(e_from,e_to, e_label, e_techn) Rel_L(e_from,e_to, e_label, e_techn)
+
+!define Rel_R(e_from,e_to, e_label) Rel_(e_from,e_to, e_label, "-RIGHT->")
+!define Rel_R(e_from,e_to, e_label, e_techn) Rel_(e_from,e_to, e_label, e_techn, "-RIGHT->")
+!define Rel_Right(e_from,e_to, e_label) Rel_R(e_from,e_to, e_label)
+!define Rel_Right(e_from,e_to, e_label, e_techn) Rel_R(e_from,e_to, e_label, e_techn)
+
+!define Rel_AsIs_U(e_from,e_to, e_label) Rel_Stereotype(e_from,e_to, e_label, "AsIs", "-UP->")
+!define Rel_AsIs_U(e_from,e_to, e_label, e_techn) Rel_Stereotype(e_from,e_to, e_label, "AsIs", e_techn, "-UP->")
+!define Rel_AsIs_D(e_from,e_to, e_label) Rel_Stereotype(e_from,e_to, e_label, "AsIs", "-DOWN->")
+!define Rel_AsIs_D(e_from,e_to, e_label, e_techn) Rel_Stereotype(e_from,e_to, e_label, "AsIs", e_techn, "-DOWN->")
+!define Rel_AsIs_L(e_from,e_to, e_label) Rel_Stereotype(e_from,e_to, e_label, "AsIs", "-LEFT->")
+!define Rel_AsIs_L(e_from,e_to, e_label, e_techn) Rel_Stereotype(e_from,e_to, e_label, "AsIs", e_techn, "-LEFT->")
+!define Rel_AsIs_R(e_from,e_to, e_label) Rel_Stereotype(e_from,e_to, e_label, "AsIs", "-RIGHT->")
+!define Rel_AsIs_R(e_from,e_to, e_label, e_techn) Rel_Stereotype(e_from,e_to, e_label, "AsIs", e_techn, "-RIGHT->")
+
+!define Rel_Develop_U(e_from,e_to, e_label) Rel_Stereotype(e_from,e_to, e_label, "Develop", "-UP->")
+!define Rel_Develop_U(e_from,e_to, e_label, e_techn) Rel_Stereotype(e_from,e_to, e_label, "Develop", e_techn, "-UP->")
+!define Rel_Develop_D(e_from,e_to, e_label) Rel_Stereotype(e_from,e_to, e_label, "Develop", "-DOWN->")
+!define Rel_Develop_D(e_from,e_to, e_label, e_techn) Rel_Stereotype(e_from,e_to, e_label, "Develop", e_techn, "-DOWN->")
+!define Rel_Develop_L(e_from,e_to, e_label) Rel_Stereotype(e_from,e_to, e_label, "Develop", "-LEFT->")
+!define Rel_Develop_L(e_from,e_to, e_label, e_techn) Rel_Stereotype(e_from,e_to, e_label, "Develop", e_techn, "-LEFT->")
+!define Rel_Develop_R(e_from,e_to, e_label) Rel_Stereotype(e_from,e_to, e_label, "Develop", "-RIGHT->")
+!define Rel_Develop_R(e_from,e_to, e_label, e_techn) Rel_Stereotype(e_from,e_to, e_label, "Develop", e_techn, "-RIGHT->")
+
+!define Rel_Deprecate_U(e_from,e_to, e_label) Rel_Stereotype(e_from,e_to, e_label, "Deprecate", "-UP->")
+!define Rel_Deprecate_U(e_from,e_to, e_label, e_techn) Rel_Stereotype(e_from,e_to, e_label, "Deprecate", e_techn, "-UP->")
+!define Rel_Deprecate_D(e_from,e_to, e_label) Rel_Stereotype(e_from,e_to, e_label, "Deprecate", "-DOWN->")
+!define Rel_Deprecate_D(e_from,e_to, e_label, e_techn) Rel_Stereotype(e_from,e_to, e_label, "Deprecate", e_techn, "-DOWN->")
+!define Rel_Deprecate_L(e_from,e_to, e_label) Rel_Stereotype(e_from,e_to, e_label, "Deprecate", "-LEFT->")
+!define Rel_Deprecate_L(e_from,e_to, e_label, e_techn) Rel_Stereotype(e_from,e_to, e_label, "Deprecate", e_techn, "-LEFT->")
+!define Rel_Deprecate_R(e_from,e_to, e_label) Rel_Stereotype(e_from,e_to, e_label, "Deprecate","-RIGHT->")
+!define Rel_Deprecate_R(e_from,e_to, e_label, e_techn) Rel_Stereotype(e_from,e_to, e_label, "Deprecate", e_techn, "-RIGHT->")
+
+
+
