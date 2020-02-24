@@ -125,20 +125,14 @@ center footer L12 Context Model
 !define System_Ext_Develop(e_alias, e_label) rectangle "==e_label" <<external_system_develop>> as e_alias
 !define System_Ext_Develop(e_alias, e_label, e_descr) rectangle "==e_label\n\n e_descr" <<external_system_develop>> as e_alias
 
-!define SystemDb(e_alias, e_label) database "==e_label" <<system>> as e_alias
-!define SystemDb(e_alias, e_label, e_descr) database "==e_label\n\n e_descr" <<system>> as e_alias
+!define SystemDb(e_alias, e_label) database "==e_label" <<database>> as e_alias
+!define SystemDb(e_alias, e_label, e_descr) database "==e_label\n\n e_descr" <<database>> as e_alias
 
-!define SystemDb_Deprecate(e_alias, e_label) database "==e_label" <<system_deprecate>> as e_alias
-!define SystemDb_Deprecate(e_alias, e_label, e_descr) database "==e_label\n\n e_descr" <<system_deprecate>> as e_alias
+!define SystemDb_Deprecate(e_alias, e_label) database "==e_label" <<database_deprecate>> as e_alias
+!define SystemDb_Deprecate(e_alias, e_label, e_descr) database "==e_label\n\n e_descr" <<database_deprecate>> as e_alias
 
-!define SystemDb_Develop(e_alias, e_label) database "==e_label" <<system_develop>> as e_alias
-!define SystemDb_Develop(e_alias, e_label, e_descr) database "==e_label\n\n e_descr" <<system_develop>> as e_alias
+!define SystemDb_Develop(e_alias, e_label) database "==e_label" <<database_develop>> as e_alias
+!define SystemDb_Develop(e_alias, e_label, e_descr) database "==e_label\n\n e_descr" <<database_develop>> as e_alias
 
 !define SystemDb_Ext(e_alias, e_label) database "==e_label" <<external_system>> as e_alias
 !define SystemDb_Ext(e_alias, e_label, e_descr) database "==e_label\n\n e_descr" <<external_system>> as e_alias
-
-' Boundaries
-' ##################################
-
-!define Enterprise_Boundary(e_alias, e_label) Boundary(e_alias, e_label, "Enterprise")
-!define System_Boundary(e_alias, e_label) Boundary(e_alias, e_label, "System")
