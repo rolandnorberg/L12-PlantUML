@@ -1,0 +1,31 @@
+' L12 Extension, version 1.0.0
+' https://github.com/rolandnorberg/L12-PlantUML
+
+' Styling
+' ##################################
+
+skinparam rectangle<<boundary>> {
+    Shadowing false
+    StereotypeFontSize 0
+    FontColor #444444
+    BorderColor #444444
+    BorderStyle dashed
+}
+
+' Boundaries
+' ##################################
+
+!define Boundary(e_alias, e_label) rectangle "==e_label" <<boundary>> as e_alias
+!define Boundary(e_alias, e_label, e_type) rectangle "==e_label\n<size:TECHN_FONT_SIZE>[e_type]</size>" <<boundary>> as e_alias
+
+!define Enterprise_Boundary(e_alias, e_label) Boundary(e_alias, e_label, "Enterprise")
+!define Ecosystem_Boundary(e_alias, e_label) Boundary(e_alias, e_label, "Ecosystem")
+!define Vertical_Boundary(e_alias, e_label) Boundary(e_alias, e_label, "Vertical")
+!define Team_Boundary(e_alias, e_label) Boundary(e_alias, e_label, "Team")
+
+!define Product_Boundary(e_alias, e_label) Boundary(e_alias, e_label, "Product")
+!define Context_Boundary(e_alias, e_label) Boundary(e_alias, e_label, "Bounded Context")
+
+!define System_Boundary(e_alias, e_label) Boundary(e_alias, e_label, "System")
+!define Container_Boundary(e_alias, e_label) Boundary(e_alias, e_label, "Container")
+
