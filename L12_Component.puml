@@ -1,0 +1,213 @@
+!includeurl https://raw.githubusercontent.com/rolandnorberg/L12-PlantUML/master/L12_Container.puml
+' uncomment the following line and comment the first to use locally
+' !include L12_Container.puml
+
+' Scope: A single container.
+' Primary elements: Components within the container in scope.
+' Supporting elements: Containers (within the software system in scope) plus people and software systems directly connected to the components.
+' Intended audience: Software architects and developers.
+
+' Colors
+' ##################################
+
+!define COMPONENT_BG_COLOR #85BBF0
+!define COMPONENT_DEVELOP_BG_COLOR #LIMEGREEN
+!define COMPONENT_DEPRECATE_BG_COLOR #SANDYBROWN
+
+' Styling
+' ##################################
+
+skinparam rectangle<<component>> {
+    StereotypeFontColor ELEMENT_FONT_COLOR
+    FontColor #000000
+    BackgroundColor COMPONENT_BG_COLOR
+    BorderColor #78A8D8
+}
+
+skinparam rectangle<<component_develop>> {
+    StereotypeFontColor ELEMENT_FONT_COLOR
+    FontColor #000000
+    BackgroundColor COMPONENT_DEVELOP_BG_COLOR
+    BorderColor #78A8D8
+}
+
+skinparam rectangle<<component_deprecate>> {
+    StereotypeFontColor ELEMENT_FONT_COLOR
+    FontColor #000000
+    BackgroundColor COMPONENT_DEPRECATE_BG_COLOR
+    BorderColor #78A8D8
+}
+
+skinparam rectangle<<controller>> {
+    StereotypeFontColor ELEMENT_FONT_COLOR
+    FontColor #000000
+    BackgroundColor COMPONENT_BG_COLOR
+    BorderColor #78A8D8
+}
+
+skinparam rectangle<<controller_develop>> {
+    StereotypeFontColor ELEMENT_FONT_COLOR
+    FontColor #000000
+    BackgroundColor COMPONENT_DEVELOP_BG_COLOR
+    BorderColor #78A8D8
+}
+
+skinparam rectangle<<controller_deprecate>> {
+    StereotypeFontColor ELEMENT_FONT_COLOR
+    FontColor #000000
+    BackgroundColor COMPONENT_DEPRECATE_BG_COLOR
+    BorderColor #78A8D8
+}
+
+skinparam rectangle<<service>> {
+    StereotypeFontColor ELEMENT_FONT_COLOR
+    FontColor #000000
+    BackgroundColor COMPONENT_BG_COLOR
+    BorderColor #78A8D8
+}
+
+skinparam rectangle<<service_develop>> {
+    StereotypeFontColor ELEMENT_FONT_COLOR
+    FontColor #000000
+    BackgroundColor COMPONENT_DEVELOP_BG_COLOR
+    BorderColor #78A8D8
+}
+
+skinparam rectangle<<service_deprecate>> {
+    StereotypeFontColor ELEMENT_FONT_COLOR
+    FontColor #000000
+    BackgroundColor COMPONENT_DEPRECATE_BG_COLOR
+    BorderColor #78A8D8
+}
+
+skinparam rectangle<<repository>> {
+    StereotypeFontColor ELEMENT_FONT_COLOR
+    FontColor #000000
+    BackgroundColor COMPONENT_BG_COLOR
+    BorderColor #78A8D8
+}
+
+skinparam rectangle<<repository_develop>> {
+    StereotypeFontColor ELEMENT_FONT_COLOR
+    FontColor #000000
+    BackgroundColor COMPONENT_DEVELOP_BG_COLOR
+    BorderColor #78A8D8
+}
+
+skinparam rectangle<<repository_deprecate>> {
+    StereotypeFontColor ELEMENT_FONT_COLOR
+    FontColor #000000
+    BackgroundColor COMPONENT_DEPRECATE_BG_COLOR
+    BorderColor #78A8D8
+}
+
+skinparam rectangle<<adapter>> {
+    StereotypeFontColor ELEMENT_FONT_COLOR
+    FontColor #000000
+    BackgroundColor COMPONENT_BG_COLOR
+    BorderColor #78A8D8
+}
+
+skinparam rectangle<<adapter_develop>> {
+    StereotypeFontColor ELEMENT_FONT_COLOR
+    FontColor #000000
+    BackgroundColor COMPONENT_DEVELOP_BG_COLOR
+    BorderColor #78A8D8
+}
+
+skinparam rectangle<<adapter_deprecate>> {
+    StereotypeFontColor ELEMENT_FONT_COLOR
+    FontColor #000000
+    BackgroundColor COMPONENT_DEPRECATE_BG_COLOR
+    BorderColor #78A8D8
+}
+
+
+skinparam database<<component>> {
+    StereotypeFontColor ELEMENT_FONT_COLOR
+    FontColor #000000
+    BackgroundColor COMPONENT_BG_COLOR
+    BorderColor #78A8D8
+}
+
+' Layout
+' ##################################
+center footer L12 Component Model
+
+
+' Elements
+' ##################################
+
+!define Component(e_alias, e_label) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<component>> as e_alias
+!define Component(e_alias, e_label, e_techn) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<component>> as e_alias
+!define Component(e_alias, e_label, e_techn, e_descr) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//\n\n e_descr" <<component>> as e_alias
+
+!define Component_Develop(e_alias, e_label) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<component_develop>> as e_alias
+!define Component_Develop(e_alias, e_label, e_techn) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<component_develop>> as e_alias
+!define Component_Develop(e_alias, e_label, e_techn, e_descr) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//\n\n e_descr" <<component_develop>> as e_alias
+
+!define Component_Deprecate(e_alias, e_label) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<component_deprecate>> as e_alias
+!define Component_Deprecate(e_alias, e_label, e_techn) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<component_deprecate>> as e_alias
+!define Component_Deprecate(e_alias, e_label, e_techn, e_descr) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//\n\n e_descr" <<component_deprecate>> as e_alias
+
+!define Controller(e_alias, e_label) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<controller>> as e_alias
+!define Controller(e_alias, e_label, e_techn) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<controller>> as e_alias
+!define Controller(e_alias, e_label, e_techn, e_descr) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//\n\n e_descr" <<controller>> as e_alias
+
+!define Controller_Develop(e_alias, e_label) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<controller_develop>> as e_alias
+!define Controller_Develop(e_alias, e_label, e_techn) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<controller_develop>> as e_alias
+!define Controller_Develop(e_alias, e_label, e_techn, e_descr) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//\n\n e_descr" <<controller_develop>> as e_alias
+
+!define Controller_Deprecate(e_alias, e_label) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<controller_deprecate>> as e_alias
+!define Controller_Deprecate(e_alias, e_label, e_techn) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<controller_deprecate>> as e_alias
+!define Controller_Deprecate(e_alias, e_label, e_techn, e_descr) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//\n\n e_descr" <<controller_deprecate>> as e_alias
+
+!define Service(e_alias, e_label) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<service>> as e_alias
+!define Service(e_alias, e_label, e_techn) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<service>> as e_alias
+!define Service(e_alias, e_label, e_techn, e_descr) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//\n\n e_descr" <<service>> as e_alias
+
+!define Service_Develop(e_alias, e_label) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<service_develop>> as e_alias
+!define Service_Develop(e_alias, e_label, e_techn) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<service_develop>> as e_alias
+!define Service_Develop(e_alias, e_label, e_techn, e_descr) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//\n\n e_descr" <<service_develop>> as e_alias
+
+!define Service_Deprecate(e_alias, e_label) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<service_deprecate>> as e_alias
+!define Service_Deprecate(e_alias, e_label, e_techn) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<service_deprecate>> as e_alias
+!define Service_Deprecate(e_alias, e_label, e_techn, e_descr) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//\n\n e_descr" <<service_deprecate>> as e_alias
+
+!define Repository(e_alias, e_label) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<repository>> as e_alias
+!define Repository(e_alias, e_label, e_techn) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<repository>> as e_alias
+!define Repository(e_alias, e_label, e_techn, e_descr) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//\n\n e_descr" <<repository>> as e_alias
+
+!define Repository_Develop(e_alias, e_label) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<repository_develop>> as e_alias
+!define Repository_Develop(e_alias, e_label, e_techn) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<repository_develop>> as e_alias
+!define Repository_Develop(e_alias, e_label, e_techn, e_descr) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//\n\n e_descr" <<repository_develop>> as e_alias
+
+!define Repository_Deprecate(e_alias, e_label) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<repository_deprecate>> as e_alias
+!define Repository_Deprecate(e_alias, e_label, e_techn) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<repository_deprecate>> as e_alias
+!define Repository_Deprecate(e_alias, e_label, e_techn, e_descr) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//\n\n e_descr" <<repository_deprecate>> as e_alias
+
+!define Adapter(e_alias, e_label) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<adapter>> as e_alias
+!define Adapter(e_alias, e_label, e_techn) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<adapter>> as e_alias
+!define Adapter(e_alias, e_label, e_techn, e_descr) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//\n\n e_descr" <<adapter>> as e_alias
+
+!define Adapter_Develop(e_alias, e_label) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<adapter_develop>> as e_alias
+!define Adapter_Develop(e_alias, e_label, e_techn) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<adapter_develop>> as e_alias
+!define Adapter_Develop(e_alias, e_label, e_techn, e_descr) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//\n\n e_descr" <<adapter_develop>> as e_alias
+
+!define Adapter_Deprecate(e_alias, e_label) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<adapter_deprecate>> as e_alias
+!define Adapter_Deprecate(e_alias, e_label, e_techn) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<adapter_deprecate>> as e_alias
+!define Adapter_Deprecate(e_alias, e_label, e_techn, e_descr) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//\n\n e_descr" <<adapter_deprecate>> as e_alias
+
+!define Interface(e_alias, e_label) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<interface>> as e_alias
+!define Interface(e_alias, e_label, e_techn) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<interface>> as e_alias
+!define Interface(e_alias, e_label, e_techn, e_descr) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//\n\n e_descr" <<interface>> as e_alias
+
+!define Interface_Develop(e_alias, e_label) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<interface_develop>> as e_alias
+!define Interface_Develop(e_alias, e_label, e_techn) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<interface_develop>> as e_alias
+!define Interface_Develop(e_alias, e_label, e_techn, e_descr) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//\n\n e_descr" <<interface_develop>> as e_alias
+
+!define Interface_Deprecate(e_alias, e_label) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<interface_deprecate>> as e_alias
+!define Interface_Deprecate(e_alias, e_label, e_techn) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<interface_deprecate>> as e_alias
+!define Interface_Deprecate(e_alias, e_label, e_techn, e_descr) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//\n\n e_descr" <<interface_deprecate>> as e_alias
+
+

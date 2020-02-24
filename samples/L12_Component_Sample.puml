@@ -1,0 +1,55 @@
+@startuml
+!includeurl https://raw.githubusercontent.com/rolandnorberg/L12-PlantUML/master/L12_Component.puml
+' !includeurl https://raw.githubusercontent.com/rolandnorberg/L12-PlantUML/master/L12_Legend_Component.puml
+!includeurl https://raw.githubusercontent.com/rolandnorberg/L12-PlantUML/master/L12_Legend_Short.puml
+' uncomment the following line and comment the first to use locally
+' !include ../L12_Component.puml
+' !include ../L12_Legend_Component.puml
+' !include ../L12_Legend_short.puml
+
+LAYOUT_TOP_DOWN
+
+title Target Architecture Example: Show AsIs as well as ToBe Architecture
+
+System(bonus, "FreespinBonus")
+System(player, "player-app")
+
+SystemDb_Deprecate(db, "freespin", "MySQL 5.6")
+
+
+Container_Boundary(b2, "Freespin Account") {
+    Controller(c1, "AccountAPI", "")
+    Component_Develop(c2, "AccountExclusionAPI", "")
+    Component(c3, "TransactionAPI", "")
+
+    Service(c4, "AccountsService", "")
+    Service(c5, "TransactionsService", "")
+    Adapter_Develop(a1, "Responsible Gaming Adapter", "REST/HTTP", "Adapter for calls to the responsible-gaming-app")
+
+    Container_Boundary(b3, "Codelib") {
+        Repository_Deprecate(r1, "AccountsDao", "JDBC/SQL", "Database access related to accounts")
+        Repository_Deprecate(r2, "TransactionsDao", "JDBC/SQL", "Database access related to transactions")
+    }
+
+}
+
+
+
+Rel_D(bonus, c1, "Uses")
+Rel_D(bonus, c3, "Uses")
+Rel_D(player, c2, "Uses")
+
+Rel_D(c1, c4, "Uses")
+Rel_D(c1, c5, "Uses")
+Rel_D(c2, c4, "Uses")
+Rel_D(c3, c5, "Uses")
+Rel_D(c4, r1, "Uses")
+Rel_D(c5, r2, "Uses")
+
+Rel_Develop_D(c5, a1, "Calls", "HTTP")
+
+Rel_D(r1, db, "R/W/U Accounts", "JDBC")
+Rel_Deprecate_D(r2, db, "R/W transactions")
+
+
+@enduml
