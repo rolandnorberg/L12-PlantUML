@@ -135,9 +135,3 @@ center footer L12 System Landscape Model
 
 !define SystemDb_Ext(e_alias, e_label) database "==e_label" <<external_system>> as e_alias
 !define SystemDb_Ext(e_alias, e_label, e_descr) database "==e_label\n\n e_descr" <<external_system>> as e_alias
-
-' Boundaries
-' ##################################
-
-!define Team_Boundary(e_alias, e_label) Boundary(e_alias, e_label, "Team")
-!define Vertical_Boundary(e_alias, e_label) Boundary(e_alias, e_label, "Vertical")
