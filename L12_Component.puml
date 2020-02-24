@@ -138,76 +138,74 @@ center footer L12 Component Model
 ' Elements
 ' ##################################
 
-!define Component(e_alias, e_label) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<component>> as e_alias
+!define Component(e_alias, e_label) rectangle "==e_label" <<component>> as e_alias
 !define Component(e_alias, e_label, e_techn) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<component>> as e_alias
 !define Component(e_alias, e_label, e_techn, e_descr) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//\n\n e_descr" <<component>> as e_alias
 
-!define Component_Develop(e_alias, e_label) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<component_develop>> as e_alias
+!define Component_Develop(e_alias, e_label) rectangle "==e_label" <<component_develop>> as e_alias
 !define Component_Develop(e_alias, e_label, e_techn) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<component_develop>> as e_alias
 !define Component_Develop(e_alias, e_label, e_techn, e_descr) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//\n\n e_descr" <<component_develop>> as e_alias
 
-!define Component_Deprecate(e_alias, e_label) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<component_deprecate>> as e_alias
+!define Component_Deprecate(e_alias, e_label) rectangle "==e_label" <<component_deprecate>> as e_alias
 !define Component_Deprecate(e_alias, e_label, e_techn) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<component_deprecate>> as e_alias
 !define Component_Deprecate(e_alias, e_label, e_techn, e_descr) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//\n\n e_descr" <<component_deprecate>> as e_alias
 
-!define Controller(e_alias, e_label) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<controller>> as e_alias
+!define Controller(e_alias, e_label) rectangle "==e_label" <<controller>> as e_alias
 !define Controller(e_alias, e_label, e_techn) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<controller>> as e_alias
 !define Controller(e_alias, e_label, e_techn, e_descr) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//\n\n e_descr" <<controller>> as e_alias
 
-!define Controller_Develop(e_alias, e_label) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<controller_develop>> as e_alias
+!define Controller_Develop(e_alias, e_label) rectangle "==e_label" <<controller_develop>> as e_alias
 !define Controller_Develop(e_alias, e_label, e_techn) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<controller_develop>> as e_alias
 !define Controller_Develop(e_alias, e_label, e_techn, e_descr) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//\n\n e_descr" <<controller_develop>> as e_alias
 
-!define Controller_Deprecate(e_alias, e_label) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<controller_deprecate>> as e_alias
+!define Controller_Deprecate(e_alias, e_label) rectangle "==e_label" <<controller_deprecate>> as e_alias
 !define Controller_Deprecate(e_alias, e_label, e_techn) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<controller_deprecate>> as e_alias
 !define Controller_Deprecate(e_alias, e_label, e_techn, e_descr) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//\n\n e_descr" <<controller_deprecate>> as e_alias
 
-!define Service(e_alias, e_label) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<service>> as e_alias
+!define Service(e_alias, e_label) rectangle "==e_label" <<service>> as e_alias
 !define Service(e_alias, e_label, e_techn) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<service>> as e_alias
 !define Service(e_alias, e_label, e_techn, e_descr) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//\n\n e_descr" <<service>> as e_alias
 
-!define Service_Develop(e_alias, e_label) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<service_develop>> as e_alias
+!define Service_Develop(e_alias, e_label) rectangle "==e_label" <<service_develop>> as e_alias
 !define Service_Develop(e_alias, e_label, e_techn) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<service_develop>> as e_alias
 !define Service_Develop(e_alias, e_label, e_techn, e_descr) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//\n\n e_descr" <<service_develop>> as e_alias
 
-!define Service_Deprecate(e_alias, e_label) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<service_deprecate>> as e_alias
+!define Service_Deprecate(e_alias, e_label) rectangle "==e_label" <<service_deprecate>> as e_alias
 !define Service_Deprecate(e_alias, e_label, e_techn) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<service_deprecate>> as e_alias
 !define Service_Deprecate(e_alias, e_label, e_techn, e_descr) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//\n\n e_descr" <<service_deprecate>> as e_alias
 
-!define Repository(e_alias, e_label) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<repository>> as e_alias
+!define Repository(e_alias, e_label) rectangle "==e_label" <<repository>> as e_alias
 !define Repository(e_alias, e_label, e_techn) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<repository>> as e_alias
 !define Repository(e_alias, e_label, e_techn, e_descr) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//\n\n e_descr" <<repository>> as e_alias
 
-!define Repository_Develop(e_alias, e_label) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<repository_develop>> as e_alias
+!define Repository_Develop(e_alias, e_label) rectangle "==e_label" <<repository_develop>> as e_alias
 !define Repository_Develop(e_alias, e_label, e_techn) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<repository_develop>> as e_alias
 !define Repository_Develop(e_alias, e_label, e_techn, e_descr) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//\n\n e_descr" <<repository_develop>> as e_alias
 
-!define Repository_Deprecate(e_alias, e_label) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<repository_deprecate>> as e_alias
+!define Repository_Deprecate(e_alias, e_label) rectangle "==e_label" <<repository_deprecate>> as e_alias
 !define Repository_Deprecate(e_alias, e_label, e_techn) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<repository_deprecate>> as e_alias
 !define Repository_Deprecate(e_alias, e_label, e_techn, e_descr) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//\n\n e_descr" <<repository_deprecate>> as e_alias
 
-!define Adapter(e_alias, e_label) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<adapter>> as e_alias
+!define Adapter(e_alias, e_label) rectangle "==e_label" <<adapter>> as e_alias
 !define Adapter(e_alias, e_label, e_techn) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<adapter>> as e_alias
 !define Adapter(e_alias, e_label, e_techn, e_descr) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//\n\n e_descr" <<adapter>> as e_alias
 
-!define Adapter_Develop(e_alias, e_label) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<adapter_develop>> as e_alias
+!define Adapter_Develop(e_alias, e_label) rectangle "==e_label" <<adapter_develop>> as e_alias
 !define Adapter_Develop(e_alias, e_label, e_techn) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<adapter_develop>> as e_alias
 !define Adapter_Develop(e_alias, e_label, e_techn, e_descr) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//\n\n e_descr" <<adapter_develop>> as e_alias
 
-!define Adapter_Deprecate(e_alias, e_label) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<adapter_deprecate>> as e_alias
+!define Adapter_Deprecate(e_alias, e_label) rectangle "==e_label" <<adapter_deprecate>> as e_alias
 !define Adapter_Deprecate(e_alias, e_label, e_techn) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<adapter_deprecate>> as e_alias
 !define Adapter_Deprecate(e_alias, e_label, e_techn, e_descr) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//\n\n e_descr" <<adapter_deprecate>> as e_alias
 
-!define Interface(e_alias, e_label) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<interface>> as e_alias
+!define Interface(e_alias, e_label) rectangle "==e_label" <<interface>> as e_alias
 !define Interface(e_alias, e_label, e_techn) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<interface>> as e_alias
 !define Interface(e_alias, e_label, e_techn, e_descr) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//\n\n e_descr" <<interface>> as e_alias
 
-!define Interface_Develop(e_alias, e_label) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<interface_develop>> as e_alias
+!define Interface_Develop(e_alias, e_label) rectangle "==e_label" <<interface_develop>> as e_alias
 !define Interface_Develop(e_alias, e_label, e_techn) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<interface_develop>> as e_alias
 !define Interface_Develop(e_alias, e_label, e_techn, e_descr) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//\n\n e_descr" <<interface_develop>> as e_alias
 
-!define Interface_Deprecate(e_alias, e_label) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<interface_deprecate>> as e_alias
+!define Interface_Deprecate(e_alias, e_label) rectangle "==e_label" <<interface_deprecate>> as e_alias
 !define Interface_Deprecate(e_alias, e_label, e_techn) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<interface_deprecate>> as e_alias
 !define Interface_Deprecate(e_alias, e_label, e_techn, e_descr) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//\n\n e_descr" <<interface_deprecate>> as e_alias
-
-
