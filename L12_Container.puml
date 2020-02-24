@@ -85,7 +85,3 @@ center footer L12 Container Model
 !define ContainerDb_Develop(e_alias, e_label, e_techn) database "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<container_develop>> as e_alias
 !define ContainerDb_Develop(e_alias, e_label, e_techn, e_descr) database "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//\n\n e_descr" <<container_develop>> as e_alias
 
-' Boundaries
-' ##################################
-
-!define Container_Boundary(e_alias, e_label) Boundary(e_alias, e_label, "Container")
